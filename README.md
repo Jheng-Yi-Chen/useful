@@ -1,16 +1,22 @@
-## common recode
+## recode
 
 ```{r}
-P6B$P6Q17_11[P6B$P6Q17_11 == “1”] <- “11”
-P6B$P6Q17_12[P6B$P6Q17_12 == “2”] <- “12”
-P6B$P6Q17_13[P6B$P6Q17_13 == “3”] <- “13”
+Data$variable1[Data$variable1 == “1”] <- “11”
+Data$variable2[Data$variable2 == “2”] <- “12”
+Data$variable3[Data$variable3 == “3”] <- “13”
 ```
 
 ## remove the first , and the last ,
 
 ```{r}
-P6A$P6Q5[str_sub(string = P6A$P6Q5, start = 1, end = 1) == “,”] <- str_replace(string = P6A$P6Q5[str_sub(string = P6A$P6Q5, start = 1, end = 1) == “,”], pattern = “^\\,”, replacement = “”)
-P6A$P6Q5[str_sub(string = P6A$P6Q5, start = nchar(P6A$P6Q5), end = nchar(P6A$P6Q5)) == “,”] <- str_replace(string = P6A$P6Q5[str_sub(string = P6A$P6Q5, start = nchar(P6A$P6Q5), end = nchar(P6A$P6Q5)) == “,”], pattern = “\\,$”, replacement = “”)
+Data$variable1[str_sub(string = Data$variable1, start = 1, end = 1) == “,”] <- str_replace(string = Data$variable1[str_sub(string = Data$variable1, start = 1, end = 1) == “,”], pattern = “^\\,”, replacement = “”)
+
+Data$variable1[str_sub(string = Data$variable1, start = nchar(Data$variable1), end = nchar(Data$variable1)) == “,”] <- str_replace(string = Data$variable1[str_sub(string = Data$variable1, start = nchar(Data$variable1), end = nchar(Data$variable1)) == “,”], pattern = “\\,$”, replacement = “”)
 ```
 
+## filter
 
+```{r}
+TX.10.15 <- filter(TX, TX$hour == 10 & minute %in% c(0:14))
+TX.10.30 <- filter(TX, TX$hour == 10 & minute %in% c(15:29))
+```
