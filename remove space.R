@@ -1,4 +1,3 @@
-
 remove.space <- function (x){
   gsub("^\\s+ | \\s+$", "", x)
 }
