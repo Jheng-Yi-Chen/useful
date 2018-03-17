@@ -12,4 +12,4 @@ roc <- ROC(type = "discrete", close)
 ret <- roc*sig
 charts.PerformanceSummary(ret)
 
-plot(TWII$TWII.Close)
+TWII$TWII.Close %>% na.omit() %>% plot()
