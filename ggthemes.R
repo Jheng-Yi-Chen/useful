@@ -1,0 +1,1 @@
+G + theme_economist()
