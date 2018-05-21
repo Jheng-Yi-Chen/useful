@@ -1,0 +1,3 @@
+SELECT *
+FROM Table
+WHERE pop > 1000;
