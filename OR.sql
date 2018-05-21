@@ -1,0 +1,4 @@
+SELECT *
+FROM Table
+WHERE pop > 10000 
+AND (GDP < 1000 AOR GDP > 10000);
